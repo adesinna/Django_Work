@@ -1,0 +1,17 @@
+{% extends 'tasks/base.html' %}
+
+{% block head %}
+  Page One
+{% endblock %}
+
+{% block content %}
+  <h1>My name is {{ name }}</h1>
+
+  <ul>
+    {% for day in days_list %}
+    <li>
+      Today is {{ day }} and date is {{ datetime }}
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

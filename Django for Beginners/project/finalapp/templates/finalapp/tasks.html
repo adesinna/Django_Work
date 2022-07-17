@@ -1,0 +1,17 @@
+{% extends 'finalapp/base.html' %}
+
+{% block head %}
+  Tasks Page
+
+{% endblock %}
+
+{% block content %}
+
+  <h1>Tasks Page</h1>
+  <ul>
+    {% for task in tasks_list %}
+      <li> {{ task }}</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

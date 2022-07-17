@@ -1,0 +1,20 @@
+{% extends 'win/base.html' %}
+
+{% block head %}
+  Player Page
+
+{% endblock %}
+
+{% block content %}
+
+  <h1>These are all the players</h1>
+  <ul>
+    {% for player in player_list %}
+      <li>{{ player }}</li>
+
+    {% endfor %}
+  </ul>
+
+
+
+{% endblock %}

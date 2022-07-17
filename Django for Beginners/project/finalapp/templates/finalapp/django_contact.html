@@ -1,0 +1,18 @@
+{% extends 'finalapp/base.html' %}
+
+{% block head %}
+  Contact Page
+
+{% endblock %}
+
+{% block content %}
+  <form action="" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" name="submit" value="Send Mail">
+
+  </form>
+
+{% endblock %}

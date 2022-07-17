@@ -1,0 +1,29 @@
+{% extends 'tasks/base.html' %}
+
+{% block head %}
+  Register
+
+{% endblock %}
+
+{% block content %}
+<h1> Welcome {{request.user}} </h1>
+<p><span><a href="{% url 'accounts:logout' %}">Logout</a></span></p>
+
+<h1>My Tasks</h1>
+  <ul>
+    {% for task in tasks_list%}
+    <li>{{ task }}</li>
+    {% endfor %}
+  </ul>
+
+<a href="{% url 'tasks:add_task'%}">Add New Task</a>
+
+<h1>My Tags</h1>
+<ul>
+  {% for tag in tags_list%}
+  <li>{{ tag }}</li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'tasks:add_tag'%}">Add New Tags</a>
+{% endblock %}

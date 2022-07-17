@@ -1,0 +1,48 @@
+{% extends 'todo/base.html' %}
+
+{% block head %}
+  Task Page
+
+{% endblock %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+  <p><h1> Welcome {{ request.user }}</h1></p>
+  <a href="{% url 'todo:logout' %}">Logout</a>
+{% else %}
+    <a href="{% url 'todo:login' %}">Login</a>
+    <p>Not logged in </p>
+{% endif %}
+<hr>
+  <h1>My Todo List</h1>
+  {% if object_list|length == 0 %}
+    <p>Empty task</p>
+  {% else %}
+  <form  method="GET">
+    <input type="text" name="search-area" value="{{ search_input }}">
+    <input type="submit"  value="Search">
+
+  </form>
+    <table>
+      <tr>
+        <th>Item</th>
+      </tr>
+      {% for task in tasks_list %}
+      <tr>
+        <td>
+          {{ task }}
+          <a href="{% url 'todo:task_detail' task.id %}">View</a>
+          <a href="{% url 'todo:task_update' task.id %}">Edit</a>
+          <a href="{% url 'todo:task_delete' task.id %}">Delete</a>
+        </td> <!-- task.id belongs to the task on top boss -->
+
+      </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+
+  <a href="{% url 'todo:task_create' %}">Add Task</a>
+  <p> You have {{ count }} uncompleted task</p>
+
+
+{% endblock %}

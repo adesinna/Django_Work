@@ -1,0 +1,99 @@
+Welcome to Django
+
+Django is a backend framework.
+
+I am reading the documentation.
+
+All projects == mysite and app ==
+
+Time Zone:
+    To set the time zone:
+        - Go to mysite/settings.py
+        - USE_TZ = False
+        - TIME_ZONE = 'Africa/Lagos'
+----------------------------------------------
+
+1.0 How to create an environment and install django in it:
+
+    To activate:
+        python3 -m venv env_name
+        source env_name/bin/activate (in the directory of the env)
+
+    To deactivate:
+        deactivate
+
+    To install django:
+        pip install django (==version to get the particular one)
+
+3.0 Django project:
+
+    django-admin startproject mysite
+
+        -manage.py:
+            A command-line utility that lets you interact with this Django project in various ways.
+            You can read all the details about manage.py in django-admin and manage.py.
+
+        -inner mysite/:
+            directory is the actual Python package for your project. Its name is the Python package name
+            you’ll need to use to import anything inside it.
+
+        -mysite/settings.py:
+            Settings/configuration for this Django project.
+            Django settings will tell you all about how settings work.
+
+        -mysite/urls.py:
+             The URL declarations for this Django project;
+             a “table of contents” of your Django-powered site.
+
+        -mysite/asgi.py:
+            An entry-point for ASGI-compatible web servers to serve your project.
+
+        -mysite/wsgi.py:
+            An entry-point for WSGI-compatible web servers to serve your project.
+
+
+4.0 Development Server:
+
+    When you are still working on your site, we need a development server.
+
+    python manage.py runserver
+
+
+5.0 Creating an app:
+
+     python manage.py startapp polls
+
+    -create a file urls in polls
+
+    -add polls to project/urls.py
+
+    -add polls to installed apps
+
+    using the documentation
+
+
+
+6.0 Models:
+    - Create the models
+    - python manage.py makemigrations # records the migration
+    - python manage.py migrate # pushes it to the database
+
+
+7.0 Django shell: (page 2)
+
+    This is an API that allows you to interact with the database
+
+    python manage.py shell # starts the shell
+
+    Question.objects.all() # you can see all
+
+    if you want to use the time zone:
+        from django.utils import timezone (for the date time field)
+
+
+
+8.0 Django-admin:
+
+    python manage.py createsuperuser
+
+    It allows you to create users and CRUD

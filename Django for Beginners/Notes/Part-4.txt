@@ -1,0 +1,4 @@
+app_name = 'final'
+
+- admin.py you can not add the status class,
+- make migrations and migrate after those changes

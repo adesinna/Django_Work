@@ -1,0 +1,19 @@
+app_name = 'win'
+
+ORM is the way the model maps into the database.
+Each class maps into a table in the database!
+
+# many to one/ one to many relationship
+
+one player can only have one club but a club can have multiple players. A player cannot have more than one club
+
+
+# many to many
+
+A player can have more than one sponsor like tshirt, shoe and drinks and a sponsor can have more than one player too mane, hendo uses New balance
+
+adesina
+shanantest@gmail.com
+1234
+
+You Can use the django admin to do crud

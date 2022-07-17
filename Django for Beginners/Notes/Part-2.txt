@@ -1,0 +1,17 @@
+app_name = 'tasks'
+- Creating a view without creating a function or class based view.
+    It is possible to create a view by using django in built view called generic views.
+    Go to app/urls:
+        from django.views.generic import TemplateView
+
+        path('index/', TemplateView.as_view(template_name='tasks/index.html'))
+        just specific the template name, this views creates static files. Django automatically do the render for you.
+        Disadvantage of this is that you cannot put context in it
+
+Note:
+if templates will be in project folder just go to settings
+'DIRS': [BASE_DIR / 'template']
+
+- Look at the templates to see how base templates and extension works
+
+-Creating Views that have context using function based view check
